@@ -16,4 +16,22 @@ For example, start with 87:
     4884 is a palindrome and we needed 4 steps to obtain it, so answer for 87 is 4.
  */
 
-    
+const palindromeChainLength = function (n, count = 0) {
+    if (isPalindrome(n)) {
+        return count;
+    } else {
+        count+= 1;
+        console.log(n + reversed(n), count)
+        return palindromeChainLength((n + reversed(n)), count);
+    }
+
+    function isPalindrome(n) {
+        return n.toString() === n.toString().split('').reverse().join('');
+    }
+
+    function reversed(n) {
+        return parseInt(n.toString().split('').reverse().join(''));
+    }
+}
+
+console.log(palindromeChainLength(87))
