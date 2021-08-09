@@ -11,7 +11,7 @@ Input : [2,5,6,7,5,2,6] , Output: [7].
  */
 
 function removeDuplication(arr) {
-    console.log(arr)
+    // console.log(arr)
     result = [];
     let count;
     for (let i = 0; i < arr.length; i++) {
@@ -20,7 +20,7 @@ function removeDuplication(arr) {
             if (arr[i]===arr[j] && arr[j] !== undefined) {
                 // console.log("i",i, arr[i], "j", j, arr[j])
                 count++;             
-                console.log(count)
+                // console.log(count)
                 if (count > 1) {
                     arr.splice(j,1)
                 }
@@ -29,10 +29,14 @@ function removeDuplication(arr) {
         }
         if (count===1) {
             result.push(arr[i]);
-            console.log(result)
+            // console.log(result)
         }
     }
     return result
 }
 
 removeDuplication([1,2,3,2,4,6,2,6,7])
+
+const removeDupes = arr => arr.filter( num => arr.indexOf(num) === arr.lastIndexOf(num));
+
+console.log(removeDupes([1,2,3,2,4,6,2,6,7]))
