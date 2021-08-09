@@ -10,6 +10,7 @@ Input : [1,2,1,2,1,1,2,2] , Output : [].
 Input : [2,5,6,7,5,2,6] , Output: [7].
  */
 
+//nested loops, manually comparing and then creating new array with non dupes
 function removeDuplication(arr) {
     // console.log(arr)
     result = [];
@@ -34,9 +35,9 @@ function removeDuplication(arr) {
     }
     return result
 }
+console.log(removeDuplication([1,2,3,2,4,6,2,6,7]))
 
-removeDuplication([1,2,3,2,4,6,2,6,7])
-
+//arrow function filtering array and returning new array with numbers whose first and lastindex are the same (so no dupes)
 const removeDupes = arr => arr.filter( num => arr.indexOf(num) === arr.lastIndexOf(num));
 
 console.log(removeDupes([1,2,3,2,4,6,2,6,7]))
