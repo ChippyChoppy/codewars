@@ -12,6 +12,7 @@ For example:
  persistence(4) === 0 // because 4 is already a one-digit number
  */
 
+/*** LOOOOOPING ***/
 function persistence(num) {
     let count = 0
     while (num > 9) {
@@ -21,8 +22,13 @@ function persistence(num) {
     return count
 }
 
-console.log(persistence(5984))
+console.log(persistence(99999))
 
-// 9 * 8 = 72 * 8 = 576
-// 5 * 7 = 35 * 6 = 210
-// 2 * 1 = 2 * 0 = 0
+
+/*** RECURSIVE ***/
+function morePersistence(num, count = 0) {
+    if (num < 10) return count
+    return morePersistence(num.toString().split('').reduce((a,b) => a * b), count += 1)
+}
+
+console.log(morePersistence(598432))
